@@ -31,5 +31,15 @@
       <option name="name" value="artifactory-maven-resolver" />
       <option name="url" value="https://complycuberepo.jfrog.io/artifactory/cc-gradle-release-local" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="artifactory-maven-resolver" />
+      <option name="name" value="artifactory-maven-resolver" />
+      <option name="url" value="https://complycuberepo.jfrog.io/artifactory/cc-gradle-dev" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="BintrayJCenter" />
+      <option name="name" value="BintrayJCenter" />
+      <option name="url" value="https://jcenter.bintray.com/" />
+    </remote-repository>
   </component>
 </project>
