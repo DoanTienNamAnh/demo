@@ -1,37 +1,82 @@
+import 'package:complycube/complycube_widget.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
+  final stages = [
+    {
+      "name": 'intro',
+      "heading": 'Green Bank ID verification',
+    },
+    {
+      "name": 'documentCapture',
+      "showGuidance": false,
+      "useMLAssistance": true,
+      "retryLimit": 1,
+      "documentTypes": {
+        "passport": true,
+        "driving_license": ['GB', 'FR'],
+        "national_identity_card": true
+      },
+    },
+    'faceCapture',
+  ];
+
+  late Map<String, dynamic> _settings;
+
+  @override
+  void initState() {
+    _settings = {
+      "clientID": "65a5e9b3a333ce00082eaf14",
+      "clientToken":
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiTXpCak16TTVZVEJoTlRReU56ZzFOVGRpT1Rka1ltTTJObVV3Wm1Zd05ERTBObUk0WWpVMU1URmlZMkkzTjJKbFlUYzVNek5tWXpjd1pEUXdOREppTXpkbVpXTTVaR0ppTkdVMFkyTXdNMkpoTkdWaU1URmlaakZtTmpVeVpUbGxORFZtTURrNE9EZ3dOMk5rTjJVek9UWXpObUUwTTJaaVlqUXpPRFUzTm1VeVpqUTFOMkV6T1RKbVltTm1ZV0UzT0RVeE5tTTFNemd4T0dWallUQmpaalppWXpaa01tUTJaV0ptTVRKbU9USmpZV1UwWmpoa05qazNPV1kyT1RBek5qVXdaVGhoWldVek1qWTROR0kwTWpRek1EZzJaalV3T0Rrek9UTmpaRFU0WVRKak5qWXpZMlEwTnpZME1qYzVNVEUwTkdSbVlqSmhNR0V3WXpnM053PT0iLCJ1cmxzIjp7ImFwaSI6Imh0dHBzOi8vYXBpLmNvbXBseWN1YmUuY29tIiwic3luYyI6IndzczovL3hkcy5jb21wbHljdWJlLmNvbSIsImNyb3NzRGV2aWNlIjoiaHR0cHM6Ly94ZC5jb21wbHljdWJlLmNvbSJ9LCJvcHRpb25zIjp7ImhpZGVDb21wbHlDdWJlTG9nbyI6ZmFsc2UsImVuYWJsZUN1c3RvbUxvZ28iOnRydWUsImVuYWJsZVRleHRCcmFuZCI6dHJ1ZSwiZW5hYmxlQ3VzdG9tQ2FsbGJhY2tzIjp0cnVlLCJlbmFibGVOZmMiOmZhbHNlLCJpZGVudGl0eUNoZWNrTGl2ZW5lc3NBdHRlbXB0cyI6NSwiZG9jdW1lbnRJbmZsaWdodFRlc3RBdHRlbXB0cyI6MiwibmZjUmVhZEF0dGVtcHRzIjo1fSwiaWF0IjoxNzA1Mzg1MjA1LCJleHAiOjE3MDUzODg4MDV9.ljZP7zaukXxrOQ7LoxDyGas2aSSAL6KwwjXDnlBKAnQ",
+      "stages": stages,
+      // ...
+    };
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('ComplyCube Integration'),
+        ),
+        body: ComplyCubeWidget(
+          settings: _settings,
+          onSuccess: (result) {
+            if (kDebugMode) {
+              print(result);
+            }
+          },
+          onCancelled: (result) {
+            if (kDebugMode) {
+              print(result);
+            }
+          },
+          onError: (error) {
+            if (kDebugMode) {
+              print(error);
+            }
+          },
+          onComplyCubeEvent: (event) {
+            print(event);
+          },
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

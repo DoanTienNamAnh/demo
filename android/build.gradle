@@ -1,7 +1,7 @@
 buildscript {
     ext.kotlin_version = '1.7.10'
     repositories {
-        jcenter()
+        mavenCentral()
         google()
 //        mavenCentral()
     }
@@ -15,7 +15,7 @@ buildscript {
 allprojects {
     apply plugin: "com.jfrog.artifactory"
     repositories {
-        jcenter()
+        mavenCentral()
         google()
 //        mavenCentral()
     }
@@ -34,7 +34,7 @@ artifactory {
     }
     resolve {
         repository {
-            repoKey = 'cc-gradle-dev'
+            repoKey = 'cc-gradle-release-local'
             username = "${artifactory_user}"
             password = "${artifactory_password}"
             maven = true
