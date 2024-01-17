@@ -1,6 +1,12 @@
+import 'dart:convert';
+
 import 'package:complycube/complycube_widget.dart';
+import 'package:complycube/models/settings.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:rxdart/rxdart.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +21,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
+  ComplyCubeSettings a = ComplyCubeSettings();
+
+  final BehaviorSubject<String> _tokenSubject = BehaviorSubject<String>();
+
   final stages = [
     {
       "name": 'intro',
@@ -22,9 +32,10 @@ class _MyAppState extends State<MyApp> {
     },
     {
       "name": 'documentCapture',
-      "showGuidance": false,
+      "showGuidance": true,
       "useMLAssistance": true,
       "retryLimit": 1,
+      "liveCapture": true,
       "documentTypes": {
         "passport": true,
         "driving_license": ['GB', 'FR'],
@@ -36,15 +47,45 @@ class _MyAppState extends State<MyApp> {
 
   late Map<String, dynamic> _settings;
 
+  void _createToken() async {
+    try {
+      var headers = {
+        'Authorization': 'test_QXpoeUR0aTl1aFMzYlJmejk6OWY5YzBkMmQ1NjYxNTEzMjllOTI5Yjk1YzVhM2ZkYWIxYWVkNzhmMzNiNWE2ODZhYTU4NWRhNWY5NDJiNTBkZA==',
+        'Content-Type': 'application/json'
+      };
+      var request = http.Request('POST', Uri.parse('https://api.complycube.com/v1/tokens'));
+      request.body = json.encode({
+        "clientId": "65a5e9b3a333ce00082eaf14",
+        "appId": "com.example.demo"
+      });
+      request.headers.addAll(headers);
+
+      http.StreamedResponse response = await request.send();
+
+      if (response.statusCode == 200) {
+        var result = await response.stream.bytesToString();
+        var token = jsonDecode(result)["token"];
+        _settings = {
+          "clientID": "65a5e9b3a333ce00082eaf14",
+          "clientToken": token,
+          "stages": stages,
+          // ...
+        };
+        _tokenSubject.add(token);
+      }
+      else {
+        print(response.reasonPhrase);
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
   @override
   void initState() {
-    _settings = {
-      "clientID": "65a5e9b3a333ce00082eaf14",
-      "clientToken":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoiTXpCak16TTVZVEJoTlRReU56ZzFOVGRpT1Rka1ltTTJObVV3Wm1Zd05ERTBObUk0WWpVMU1URmlZMkkzTjJKbFlUYzVNek5tWXpjd1pEUXdOREppTXpkbVpXTTVaR0ppTkdVMFkyTXdNMkpoTkdWaU1URmlaakZtTmpVeVpUbGxORFZtTURrNE9EZ3dOMk5rTjJVek9UWXpObUUwTTJaaVlqUXpPRFUzTm1VeVpqUTFOMkV6T1RKbVltTm1ZV0UzT0RVeE5tTTFNemd4T0dWallUQmpaalppWXpaa01tUTJaV0ptTVRKbU9USmpZV1UwWmpoa05qazNPV1kyT1RBek5qVXdaVGhoWldVek1qWTROR0kwTWpRek1EZzJaalV3T0Rrek9UTmpaRFU0WVRKak5qWXpZMlEwTnpZME1qYzVNVEUwTkdSbVlqSmhNR0V3WXpnM053PT0iLCJ1cmxzIjp7ImFwaSI6Imh0dHBzOi8vYXBpLmNvbXBseWN1YmUuY29tIiwic3luYyI6IndzczovL3hkcy5jb21wbHljdWJlLmNvbSIsImNyb3NzRGV2aWNlIjoiaHR0cHM6Ly94ZC5jb21wbHljdWJlLmNvbSJ9LCJvcHRpb25zIjp7ImhpZGVDb21wbHlDdWJlTG9nbyI6ZmFsc2UsImVuYWJsZUN1c3RvbUxvZ28iOnRydWUsImVuYWJsZVRleHRCcmFuZCI6dHJ1ZSwiZW5hYmxlQ3VzdG9tQ2FsbGJhY2tzIjp0cnVlLCJlbmFibGVOZmMiOmZhbHNlLCJpZGVudGl0eUNoZWNrTGl2ZW5lc3NBdHRlbXB0cyI6NSwiZG9jdW1lbnRJbmZsaWdodFRlc3RBdHRlbXB0cyI6MiwibmZjUmVhZEF0dGVtcHRzIjo1fSwiaWF0IjoxNzA1Mzg1MjA1LCJleHAiOjE3MDUzODg4MDV9.ljZP7zaukXxrOQ7LoxDyGas2aSSAL6KwwjXDnlBKAnQ",
-      "stages": stages,
-      // ...
-    };
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      _createToken();
+    });
     super.initState();
   }
 
@@ -55,27 +96,35 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('ComplyCube Integration'),
         ),
-        body: ComplyCubeWidget(
-          settings: _settings,
-          onSuccess: (result) {
-            if (kDebugMode) {
-              print(result);
-            }
-          },
-          onCancelled: (result) {
-            if (kDebugMode) {
-              print(result);
-            }
-          },
-          onError: (error) {
-            if (kDebugMode) {
-              print(error);
-            }
-          },
-          onComplyCubeEvent: (event) {
-            print(event);
-          },
-        ),
+        body: StreamBuilder<String>(
+            stream: _tokenSubject,
+            builder: (context, snapshot) {
+              return snapshot.hasData
+                  ? ComplyCubeWidget(
+                      settings: _settings,
+                      onSuccess: (result) {
+                        if (kDebugMode) {
+                          print(result);
+                        }
+                      },
+                      onCancelled: (result) {
+                        if (kDebugMode) {
+                          print(result);
+                        }
+                      },
+                      onError: (error) {
+                        if (kDebugMode) {
+                          print(error);
+                        }
+                      },
+                      onComplyCubeEvent: (event) {
+                        print(event);
+                      },
+                    )
+                  : const Center(
+                      child: CircularProgressIndicator(),
+                    );
+            }),
       ),
     );
   }

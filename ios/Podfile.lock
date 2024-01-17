@@ -23,7 +23,6 @@ DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire`, tag `5.6.1`)
   - Analytics (from `https://github.com/segmentio/analytics-ios`)
   - complycube (from `.symlinks/plugins/complycube/ios`)
-  - ComplyCubeMobileSDK
   - Flutter (from `Flutter`)
   - JGProgressHUD (from `https://github.com/JonasGessner/JGProgressHUD`, tag `2.1.0`)
   - JWTDecode (from `https://github.com/auth0/JWTDecode.iOS.git`, tag `2.6.3`)
@@ -88,6 +87,6 @@ SPEC CHECKSUMS:
   Sentry: e9d74832ee2f49de8e0d358b89241047c706423e
   SwiftyJSON: 8cd73b154950360d79292a8dc8c0d0a85d258930
 
-PODFILE CHECKSUM: eb95aee49ac7d25be2fb809bc524cab9e41e0f04
+PODFILE CHECKSUM: a7423c2f89d4d3334cf22d33c721436daf385e95
 
 COCOAPODS: 1.14.3
