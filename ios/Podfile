@@ -36,7 +36,6 @@ flutter_ios_podfile_setup
 target 'Runner' do
   use_frameworks!
   use_modular_headers!
-#  pod 'ComplyCubeMobileSDK', '0.0.18'
   pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '7.5.0'
   pod 'JWTDecode', :git => 'https://github.com/auth0/JWTDecode.iOS.git', :tag => '2.6.3'
   pod 'Analytics', :git => 'https://github.com/segmentio/analytics-ios'

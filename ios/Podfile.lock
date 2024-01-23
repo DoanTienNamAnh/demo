@@ -2,7 +2,7 @@ PODS:
   - Alamofire (5.6.1)
   - Analytics (4.1.8)
   - complycube (0.0.1):
-    - ComplyCubeMobileSDK (= 0.0.15)
+    - ComplyCubeMobileSDK
     - Flutter
   - ComplyCubeMobileSDK (0.0.15):
     - Alamofire (= 5.6.1)
@@ -79,7 +79,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   Analytics: 9655e0e1c71ea98107cfcb2b14891168acc6c6c9
-  complycube: d85e77a1104dce5cb6daebe2199ff5095a51d18f
+  complycube: d611acccc7c58e31e095e13afa6c2c6bf1ef079b
   ComplyCubeMobileSDK: 576226aa08061f8124ebf87729a44c9d2ebc656d
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
@@ -87,6 +87,6 @@ SPEC CHECKSUMS:
   Sentry: e9d74832ee2f49de8e0d358b89241047c706423e
   SwiftyJSON: 8cd73b154950360d79292a8dc8c0d0a85d258930
 
-PODFILE CHECKSUM: a7423c2f89d4d3334cf22d33c721436daf385e95
+PODFILE CHECKSUM: 6e6050a28716030776edec5d6497d9ead613a04d
 
 COCOAPODS: 1.14.3
