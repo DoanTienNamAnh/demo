@@ -4,89 +4,59 @@ PODS:
   - complycube (0.0.1):
     - ComplyCubeMobileSDK
     - Flutter
-  - ComplyCubeMobileSDK (0.0.15):
+  - ComplyCubeMobileSDK (0.0.19):
     - Alamofire (= 5.6.1)
     - Analytics (~> 4.1)
     - JGProgressHUD (= 2.1)
     - JWTDecode (~> 2.6.3)
-    - Sentry (= 7.5.0)
+    - Sentry (~> 8.17.1)
     - SwiftyJSON (= 4.0)
   - Flutter (1.0.0)
   - JGProgressHUD (2.1)
   - JWTDecode (2.6.3)
-  - Sentry (7.5.0):
-    - Sentry/Core (= 7.5.0)
-  - Sentry/Core (7.5.0)
+  - Sentry (8.17.2):
+    - Sentry/Core (= 8.17.2)
+    - SentryPrivate (= 8.17.2)
+  - Sentry/Core (8.17.2):
+    - SentryPrivate (= 8.17.2)
+  - SentryPrivate (8.17.2)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
-  - Alamofire (from `https://github.com/Alamofire/Alamofire`, tag `5.6.1`)
-  - Analytics (from `https://github.com/segmentio/analytics-ios`)
   - complycube (from `.symlinks/plugins/complycube/ios`)
+  - ComplyCubeMobileSDK (= 0.0.19)
   - Flutter (from `Flutter`)
-  - JGProgressHUD (from `https://github.com/JonasGessner/JGProgressHUD`, tag `2.1.0`)
-  - JWTDecode (from `https://github.com/auth0/JWTDecode.iOS.git`, tag `2.6.3`)
-  - Sentry (from `https://github.com/getsentry/sentry-cocoa.git`, tag `7.5.0`)
-  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON`, tag `4.0.0`)
 
 SPEC REPOS:
   https://complycuberepo.jfrog.io/artifactory/api/pods/cc-cocoapods-release-local:
     - ComplyCubeMobileSDK
+  https://github.com/CocoaPods/Specs:
+    - Alamofire
+    - Analytics
+    - JGProgressHUD
+    - JWTDecode
+    - Sentry
+    - SentryPrivate
+    - SwiftyJSON
 
 EXTERNAL SOURCES:
-  Alamofire:
-    :git: https://github.com/Alamofire/Alamofire
-    :tag: 5.6.1
-  Analytics:
-    :git: https://github.com/segmentio/analytics-ios
   complycube:
     :path: ".symlinks/plugins/complycube/ios"
   Flutter:
     :path: Flutter
-  JGProgressHUD:
-    :git: https://github.com/JonasGessner/JGProgressHUD
-    :tag: 2.1.0
-  JWTDecode:
-    :git: https://github.com/auth0/JWTDecode.iOS.git
-    :tag: 2.6.3
-  Sentry:
-    :git: https://github.com/getsentry/sentry-cocoa.git
-    :tag: 7.5.0
-  SwiftyJSON:
-    :git: https://github.com/SwiftyJSON/SwiftyJSON
-    :tag: 4.0.0
-
-CHECKOUT OPTIONS:
-  Alamofire:
-    :git: https://github.com/Alamofire/Alamofire
-    :tag: 5.6.1
-  Analytics:
-    :commit: 764aaf71381eb80ffeb638ccdce906a41037a09c
-    :git: https://github.com/segmentio/analytics-ios
-  JGProgressHUD:
-    :git: https://github.com/JonasGessner/JGProgressHUD
-    :tag: 2.1.0
-  JWTDecode:
-    :git: https://github.com/auth0/JWTDecode.iOS.git
-    :tag: 2.6.3
-  Sentry:
-    :git: https://github.com/getsentry/sentry-cocoa.git
-    :tag: 7.5.0
-  SwiftyJSON:
-    :git: https://github.com/SwiftyJSON/SwiftyJSON
-    :tag: 4.0.0
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   Analytics: 9655e0e1c71ea98107cfcb2b14891168acc6c6c9
   complycube: d611acccc7c58e31e095e13afa6c2c6bf1ef079b
-  ComplyCubeMobileSDK: 576226aa08061f8124ebf87729a44c9d2ebc656d
+  ComplyCubeMobileSDK: a09ea08ed6cb36d6060bf31abd8dd5fbc1bc669e
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   JWTDecode: 33e5e26e5ddbd21b2065820894c08fef0cad9509
-  Sentry: e9d74832ee2f49de8e0d358b89241047c706423e
-  SwiftyJSON: 8cd73b154950360d79292a8dc8c0d0a85d258930
+  Sentry: 64a9f9c3637af913adcf53deced05bbe452d1410
+  SentryPrivate: 024c6fed507ac39ae98e6d087034160f942920d5
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 6e6050a28716030776edec5d6497d9ead613a04d
+PODFILE CHECKSUM: 7e9caa32519f63c04ccf3965e9564e7aeabcea91
 
 COCOAPODS: 1.14.3

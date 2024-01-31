@@ -5,6 +5,8 @@ plugin 'cocoapods-art', :sources => [
   'trunk'
 ]
 
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '13.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
@@ -36,12 +38,7 @@ flutter_ios_podfile_setup
 target 'Runner' do
   use_frameworks!
   use_modular_headers!
-  pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '7.5.0'
-  pod 'JWTDecode', :git => 'https://github.com/auth0/JWTDecode.iOS.git', :tag => '2.6.3'
-  pod 'Analytics', :git => 'https://github.com/segmentio/analytics-ios'
-  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire', :tag => '5.6.1'
-  pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON', :tag => '4.0.0'
-  pod 'JGProgressHUD', :git => 'https://github.com/JonasGessner/JGProgressHUD', :tag => '2.1.0'
+  pod 'ComplyCubeMobileSDK', '0.0.19'
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
   target 'RunnerTests' do
     inherit! :search_paths

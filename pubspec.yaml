@@ -32,8 +32,8 @@ dependencies:
     sdk: flutter
 
   complycube:
-    hosted: 'https://complycuberepo.jfrog.io/artifactory/api/pub/cc-pub-dev-local/'
-    version: ^0.1.1
+    hosted: 'https://complycuberepo.jfrog.io/artifactory/api/pub/cc-pub-release-local/'
+    version: ^0.1.5
 
   http: ^1.2.0
 

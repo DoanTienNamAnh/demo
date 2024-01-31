@@ -9,6 +9,9 @@
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/complycube/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/complycube/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/complycube/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/complycube/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/complycube/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/complycube/example/.dart_tool" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
