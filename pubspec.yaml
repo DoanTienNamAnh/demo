@@ -33,7 +33,7 @@ dependencies:
 
   complycube:
     hosted: 'https://complycuberepo.jfrog.io/artifactory/api/pub/cc-pub-release-local/'
-    version: ^0.1.5
+    version: ^0.1.6
 
   http: ^1.2.0
 
