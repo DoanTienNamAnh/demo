@@ -20,7 +20,7 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$USER_HOME$/.pub-cache/hosted/complycuberepo.jfrog.io%47artifactory%47api%47pub%47cc-pub-release-local%47/complycube-0.1.5/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/complycuberepo.jfrog.io%47artifactory%47api%47pub%47cc-pub-release-local%47/complycube-0.1.6/android" />
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/../../flutter/packages/flutter_tools/gradle" />
