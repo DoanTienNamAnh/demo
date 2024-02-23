@@ -4,7 +4,7 @@ PODS:
   - complycube (0.0.1):
     - ComplyCubeMobileSDK
     - Flutter
-  - ComplyCubeMobileSDK (0.0.21):
+  - ComplyCubeMobileSDK (0.0.22):
     - Alamofire
     - Analytics
     - JGProgressHUD
@@ -24,7 +24,6 @@ PODS:
 
 DEPENDENCIES:
   - complycube (from `.symlinks/plugins/complycube/ios`)
-  - ComplyCubeMobileSDK (= 0.0.21)
   - Flutter (from `Flutter`)
 
 SPEC REPOS:
@@ -49,7 +48,7 @@ SPEC CHECKSUMS:
   Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   Analytics: 9655e0e1c71ea98107cfcb2b14891168acc6c6c9
   complycube: d611acccc7c58e31e095e13afa6c2c6bf1ef079b
-  ComplyCubeMobileSDK: 9f2315989a4e9951a8b17a24fc24d352ebdb90c3
+  ComplyCubeMobileSDK: 9583fc609b1b4de2b425a9d0213122717d371199
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
   JWTDecode: 3eaab1e06b6f4dcbdd6716aff09ba4c2104ca8b7
@@ -57,6 +56,6 @@ SPEC CHECKSUMS:
   SentryPrivate: 006b24af16828441f70e2ab6adf241bd0a8ad130
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 74085c32c7b5007f1962e5b05b7a4de268031a15
+PODFILE CHECKSUM: cffccb719aebf7c24d07487c41e9a13e3c4c158e
 
 COCOAPODS: 1.14.3

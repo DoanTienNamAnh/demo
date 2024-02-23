@@ -24,18 +24,18 @@ class _HomePageState extends State<HomePage> {
       "name": 'intro',
       "heading": 'Green Bank ID verification',
     },
-    {
-      "name": 'documentCapture',
-      "showGuidance": true,
-      "useMLAssistance": true,
-      "retryLimit": 1,
-      "liveCapture": true,
-      "documentTypes": {
-        "passport": true,
-        "driving_license": ['GB', 'FR'],
-        "national_identity_card": true
-      },
-    },
+    // {
+    //   "name": 'documentCapture',
+    //   "showGuidance": true,
+    //   "useMLAssistance": true,
+    //   "retryLimit": 1,
+    //   "liveCapture": true,
+    //   "documentTypes": {
+    //     "passport": true,
+    //     "driving_license": ['GB', 'FR'],
+    //     "national_identity_card": true
+    //   },
+    // },
     'faceCapture',
   ];
 
@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                 ? ComplyCubeWidget(
                     settings: _settings,
                     onSuccess: (result) {
-                        NavigationConfig.currentState?.pushNamed(RouteName.profile);
+                        showDialog(context: context, builder: (context) => const AlertDialog(content: Text("Success"),));
                     },
                     onCancelled: (result) {
                       if (kDebugMode) {
