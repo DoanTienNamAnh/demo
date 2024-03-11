@@ -65,6 +65,12 @@ class _HomePageState extends State<HomePage> {
           "clientID": "65a5e9b3a333ce00082eaf14",
           "clientToken": token,
           "stages": stages,
+          "lookAndFeel": {
+            "primaryButtonBorderColor": "0xffEDB836",
+            "primaryButtonBgColor": "0xffEDB836",
+            "headingTextColor": "0xffEDB836",
+            "borderRadius": 24
+          }
           // ...
         };
         _tokenSubject.add(token);

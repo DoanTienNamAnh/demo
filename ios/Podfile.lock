@@ -1,10 +1,10 @@
 PODS:
-  - Alamofire (5.8.1)
+  - Alamofire (5.9.0)
   - Analytics (4.1.8)
   - complycube (0.0.1):
     - ComplyCubeMobileSDK
     - Flutter
-  - ComplyCubeMobileSDK (0.0.22):
+  - ComplyCubeMobileSDK (0.0.23):
     - Alamofire
     - Analytics
     - JGProgressHUD
@@ -14,12 +14,12 @@ PODS:
   - Flutter (1.0.0)
   - JGProgressHUD (2.2)
   - JWTDecode (3.1.0)
-  - Sentry (8.20.0):
-    - Sentry/Core (= 8.20.0)
-    - SentryPrivate (= 8.20.0)
-  - Sentry/Core (8.20.0):
-    - SentryPrivate (= 8.20.0)
-  - SentryPrivate (8.20.0)
+  - Sentry (8.21.0):
+    - Sentry/Core (= 8.21.0)
+    - SentryPrivate (= 8.21.0)
+  - Sentry/Core (8.21.0):
+    - SentryPrivate (= 8.21.0)
+  - SentryPrivate (8.21.0)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
@@ -45,17 +45,17 @@ EXTERNAL SOURCES:
     :path: Flutter
 
 SPEC CHECKSUMS:
-  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  Alamofire: 02b772c9910e8eba1a079227c32fbd9e46c90a24
   Analytics: 9655e0e1c71ea98107cfcb2b14891168acc6c6c9
   complycube: d611acccc7c58e31e095e13afa6c2c6bf1ef079b
-  ComplyCubeMobileSDK: 9583fc609b1b4de2b425a9d0213122717d371199
-  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  ComplyCubeMobileSDK: 3e0a2d3b4873c798351754d061e188b115d55867
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
   JWTDecode: 3eaab1e06b6f4dcbdd6716aff09ba4c2104ca8b7
-  Sentry: a8d7b373b9f9868442b02a0c425192f693103cbf
-  SentryPrivate: 006b24af16828441f70e2ab6adf241bd0a8ad130
+  Sentry: ebc12276bd17613a114ab359074096b6b3725203
+  SentryPrivate: d651efb234cf385ec9a1cdd3eff94b5e78a0e0fe
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
 PODFILE CHECKSUM: cffccb719aebf7c24d07487c41e9a13e3c4c158e
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2
